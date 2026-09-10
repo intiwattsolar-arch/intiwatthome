@@ -1,78 +1,72 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-intiwatt.png";
 
-const links = [
-  { label: "Inicio", href: "https://www.intiwatt.com", external: true },
-  { label: "Solución", href: "#solucion", external: false },
-  { label: "Proceso", href: "#proceso", external: false },
-  { label: "Proyectos", href: "#proyectos", external: false },
-  { label: "Beneficios", href: "#beneficios", external: false },
-  { label: "Preguntas", href: "#preguntas", external: false },
-  { label: "Calcula tu ahorro", href: "#calculadora", external: false },
+export const navLinks = [
+  { label: "Residencial", to: "/residencial" },
+  { label: "Comercios e Industrias", to: "/comercios-e-industrias" },
+  { label: "Nuestra metodología", to: "/metodologia" },
+  { label: "Nosotros", to: "/nosotros" },
+  { label: "Contacto", to: "/contacto" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/85 backdrop-blur-md border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="https://www.intiwatt.com" className="flex items-center gap-2">
-          <img src={logo} alt="IntiWatt" className="h-10 w-10" />
+        <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+          <img src={logo} alt="IntiWatt" className="h-9 w-9" />
           <span className="font-serif text-xl text-foreground">IntiWatt</span>
-        </a>
+        </Link>
 
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="text-sm text-foreground hover:text-primary transition-colors"
+        <div className="hidden lg:flex items-center gap-7">
+          {navLinks.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              className={`text-sm transition-colors ${
+                pathname === l.to ? "text-primary" : "text-foreground hover:text-primary"
+              }`}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="https://wa.me/5493518670464?text=Hola%2C%20quiero%20solicitar%20un%20estudio%20solar%20gratuito"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/contacto"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
           >
-            Solicitar estudio
-          </a>
+            Analizar mi proyecto
+          </Link>
         </div>
 
-        {/* Mobile toggle */}
-        <button onClick={() => setOpen(!open)} className="md:hidden text-foreground">
+        <button onClick={() => setOpen(!open)} className="lg:hidden text-foreground" aria-label="Menú">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-background border-b border-border px-4 pb-4">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        <div className="lg:hidden bg-background border-b border-border px-4 pb-4">
+          {navLinks.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
               onClick={() => setOpen(false)}
-              className="block py-2 text-sm text-foreground hover:text-primary"
+              className="block py-3 text-sm text-foreground border-b border-border/60 last:border-0"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="https://wa.me/5493518670464?text=Hola%2C%20quiero%20solicitar%20un%20estudio%20solar%20gratuito"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 block text-center bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-medium"
+          <Link
+            to="/contacto"
+            onClick={() => setOpen(false)}
+            className="mt-3 block text-center bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-medium"
           >
-            Solicitar estudio
-          </a>
+            Analizar mi proyecto
+          </Link>
         </div>
       )}
     </nav>
