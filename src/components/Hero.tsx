@@ -6,7 +6,7 @@ const Hero = () => (
   <section className="relative min-h-[92vh] flex items-end pb-16 md:pb-24 overflow-hidden">
     <div className="absolute inset-0">
       <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}hero-video.mp4`} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/35 to-foreground/10" />
     </div>
