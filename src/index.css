@@ -22,7 +22,7 @@
     --secondary-foreground: 30 10% 15%;
 
     --muted: 35 15% 94%;
-    --muted-foreground: 30 8% 50%;
+    --muted-foreground: 30 10% 34%;
 
     --accent: 33 90% 95%;
     --accent-foreground: 33 80% 35%;
@@ -54,6 +54,12 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  p, li, a, span, label, input, textarea, select, button {
+    font-weight: 500;
   }
 
   h1, h2, h3, h4 {
