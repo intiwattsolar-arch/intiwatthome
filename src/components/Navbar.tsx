@@ -4,8 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-intiwatt.png";
 
 export const navLinks = [
-  { label: "Residencial", to: "/residencial" },
-  { label: "Comercios e Industrias", to: "/comercios-e-industrias" },
+  { label: "Residencial", to: "https://home.intiwatt.com/", external: true },
+  { label: "Comercios e Industrias", to: "https://industrial.intiwatt.com/", external: true },
   { label: "Nuestra metodología", to: "/metodologia" },
   { label: "Nosotros", to: "/nosotros" },
   { label: "Contacto", to: "/contacto" },

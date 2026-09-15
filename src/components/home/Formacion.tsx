@@ -14,26 +14,13 @@ const Formacion = () => (
           </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Nuestra base técnica proviene del curso de <strong className="text-foreground">Técnico/a de Instalación
-              de Sistemas Solares Fotovoltaicos</strong> del Instituto de Energía Solar de la Universidad Politécnica
-              de Madrid (IES-UPM).
+              Nuestra base técnica se complementa con formación especializada en sistemas solares fotovoltaicos
+              realizada en el <strong className="text-foreground">Instituto de Energía Solar de la Universidad
+              Politécnica de Madrid (IES-UPM)</strong>.
             </p>
             <p>
-              Es una certificación oficial emitida en Madrid en diciembre de 2022, con código de verificación{" "}
-              <strong className="text-foreground">2022/AS03_22/1245</strong>, verificable en{" "}
-              <a
-                href="https://www.upm.es"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary font-semibold hover:underline"
-              >
-                upm.es
-              </a>
-              .
-            </p>
-            <p>
-              Esa formación es la que respalda nuestra metodología: analizar el consumo y el sitio antes de proponer
-              cualquier equipo.
+              Esta formación sustenta nuestra metodología de trabajo: analizar el consumo, el sitio y las condiciones
+              de operación antes de proponer cualquier equipo o solución.
             </p>
           </div>
         </motion.div>
