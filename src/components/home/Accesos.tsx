@@ -3,11 +3,17 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
 const accesos = [
-  { title: "Residencial", desc: "Soluciones energéticas para viviendas.", to: "/residencial" },
+  {
+    title: "Residencial",
+    desc: "Soluciones energéticas para viviendas.",
+    to: "https://home.intiwatt.com/",
+    external: true,
+  },
   {
     title: "Comercios e Industrias",
     desc: "Soluciones para empresas, comercios y operaciones industriales.",
-    to: "/comercios-e-industrias",
+    to: "https://industrial.intiwatt.com/",
+    external: true,
   },
   { title: "Nuestras obras", desc: "Proyectos y trabajos realizados por IntiWatt.", to: "/obras" },
   { title: "Calculadora básica", desc: "Una herramienta sencilla para obtener una primera orientación.", to: "/calculadora" },
@@ -25,16 +31,28 @@ const Accesos = () => (
             viewport={{ once: true }}
             transition={{ delay: i * 0.06 }}
           >
-            <Link
-              to={a.to}
-              className="group block h-full bg-card rounded-xl border border-border p-7 hover:border-primary transition-colors"
-            >
-              <div className="flex items-start justify-between gap-3 mb-2">
-                <h3 className="font-serif text-xl text-foreground">{a.title}</h3>
-                <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
-              </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">{a.desc}</p>
-            </Link>
+            {(() => {
+              const inner = (
+                <>
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <h3 className="font-serif text-xl text-foreground">{a.title}</h3>
+                    <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{a.desc}</p>
+                </>
+              );
+              const cls =
+                "group block h-full bg-card rounded-xl border border-border p-7 hover:border-primary transition-colors";
+              return a.external ? (
+                <a href={a.to} className={cls}>
+                  {inner}
+                </a>
+              ) : (
+                <Link to={a.to} className={cls}>
+                  {inner}
+                </Link>
+              );
+            })()}
           </motion.div>
         ))}
       </div>

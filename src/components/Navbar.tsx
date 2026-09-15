@@ -4,8 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo-intiwatt.png";
 
 export const navLinks = [
-  { label: "Residencial", to: "/residencial" },
-  { label: "Comercios e Industrias", to: "/comercios-e-industrias" },
+  { label: "Residencial", to: "https://home.intiwatt.com/", external: true },
+  { label: "Comercios e Industrias", to: "https://industrial.intiwatt.com/", external: true },
   { label: "Nuestra metodología", to: "/metodologia" },
   { label: "Nosotros", to: "/nosotros" },
   { label: "Contacto", to: "/contacto" },
@@ -24,17 +24,27 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden lg:flex items-center gap-7">
-          {navLinks.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className={`text-sm transition-colors ${
-                pathname === l.to ? "text-primary" : "text-foreground hover:text-primary"
-              }`}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {navLinks.map((l) =>
+            l.external ? (
+              <a
+                key={l.to}
+                href={l.to}
+                className="text-sm text-foreground hover:text-primary transition-colors"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.to}
+                to={l.to}
+                className={`text-sm transition-colors ${
+                  pathname === l.to ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
+              >
+                {l.label}
+              </Link>
+            )
+          )}
           <Link
             to="/contacto"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
@@ -50,16 +60,27 @@ const Navbar = () => {
 
       {open && (
         <div className="lg:hidden bg-background border-b border-border px-4 pb-4">
-          {navLinks.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              onClick={() => setOpen(false)}
-              className="block py-3 text-sm text-foreground border-b border-border/60 last:border-0"
-            >
-              {l.label}
-            </Link>
-          ))}
+          {navLinks.map((l) =>
+            l.external ? (
+              <a
+                key={l.to}
+                href={l.to}
+                onClick={() => setOpen(false)}
+                className="block py-3 text-sm text-foreground border-b border-border/60 last:border-0"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.to}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className="block py-3 text-sm text-foreground border-b border-border/60 last:border-0"
+              >
+                {l.label}
+              </Link>
+            )
+          )}
           <Link
             to="/contacto"
             onClick={() => setOpen(false)}

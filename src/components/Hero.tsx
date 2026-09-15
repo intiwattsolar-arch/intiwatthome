@@ -43,18 +43,18 @@ const Hero = () => (
         transition={{ delay: 0.6 }}
         className="flex flex-col sm:flex-row gap-3"
       >
-        <Link
-          to="/residencial"
+        <a
+          href="https://home.intiwatt.com/"
           className="bg-primary text-primary-foreground px-7 py-3.5 rounded-lg font-medium hover:opacity-90 transition-opacity text-center"
         >
           Es para mi casa
-        </Link>
-        <Link
-          to="/comercios-e-industrias"
+        </a>
+        <a
+          href="https://industrial.intiwatt.com/"
           className="bg-primary text-primary-foreground px-7 py-3.5 rounded-lg font-medium hover:opacity-90 transition-opacity text-center"
         >
           Es para mi negocio o fábrica
-        </Link>
+        </a>
       </motion.div>
 
       <motion.div
@@ -63,11 +63,17 @@ const Hero = () => (
         transition={{ delay: 0.8 }}
         className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-primary-foreground/75"
       >
-        {navLinks.map((l) => (
-          <Link key={l.to} to={l.to} className="hover:text-primary transition-colors">
-            {l.label}
-          </Link>
-        ))}
+        {navLinks.map((l) =>
+          l.external ? (
+            <a key={l.to} href={l.to} className="hover:text-primary transition-colors">
+              {l.label}
+            </a>
+          ) : (
+            <Link key={l.to} to={l.to} className="hover:text-primary transition-colors">
+              {l.label}
+            </Link>
+          )
+        )}
       </motion.div>
     </div>
   </section>
