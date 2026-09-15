@@ -24,17 +24,27 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden lg:flex items-center gap-7">
-          {navLinks.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className={`text-sm transition-colors ${
-                pathname === l.to ? "text-primary" : "text-foreground hover:text-primary"
-              }`}
-            >
-              {l.label}
-            </Link>
-          ))}
+          {navLinks.map((l) =>
+            l.external ? (
+              <a
+                key={l.to}
+                href={l.to}
+                className="text-sm text-foreground hover:text-primary transition-colors"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.to}
+                to={l.to}
+                className={`text-sm transition-colors ${
+                  pathname === l.to ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
+              >
+                {l.label}
+              </Link>
+            )
+          )}
           <Link
             to="/contacto"
             className="bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity"
