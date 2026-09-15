@@ -43,18 +43,18 @@ const Hero = () => (
         transition={{ delay: 0.6 }}
         className="flex flex-col sm:flex-row gap-3"
       >
-        <Link
-          to="/residencial"
+        <a
+          href="https://home.intiwatt.com/"
           className="bg-primary text-primary-foreground px-7 py-3.5 rounded-lg font-medium hover:opacity-90 transition-opacity text-center"
         >
           Es para mi casa
-        </Link>
-        <Link
-          to="/comercios-e-industrias"
+        </a>
+        <a
+          href="https://industrial.intiwatt.com/"
           className="bg-primary text-primary-foreground px-7 py-3.5 rounded-lg font-medium hover:opacity-90 transition-opacity text-center"
         >
           Es para mi negocio o fábrica
-        </Link>
+        </a>
       </motion.div>
 
       <motion.div
