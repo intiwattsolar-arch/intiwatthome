@@ -60,16 +60,27 @@ const Navbar = () => {
 
       {open && (
         <div className="lg:hidden bg-background border-b border-border px-4 pb-4">
-          {navLinks.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              onClick={() => setOpen(false)}
-              className="block py-3 text-sm text-foreground border-b border-border/60 last:border-0"
-            >
-              {l.label}
-            </Link>
-          ))}
+          {navLinks.map((l) =>
+            l.external ? (
+              <a
+                key={l.to}
+                href={l.to}
+                onClick={() => setOpen(false)}
+                className="block py-3 text-sm text-foreground border-b border-border/60 last:border-0"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.to}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className="block py-3 text-sm text-foreground border-b border-border/60 last:border-0"
+              >
+                {l.label}
+              </Link>
+            )
+          )}
           <Link
             to="/contacto"
             onClick={() => setOpen(false)}
