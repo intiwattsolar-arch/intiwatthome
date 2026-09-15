@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import certificado from "@/assets/certificado-ies-upm.png.asset.json";
 
 const Formacion = () => (
   <section className="py-20 md:py-28 bg-secondary">
@@ -46,7 +45,7 @@ const Formacion = () => (
           transition={{ delay: 0.1 }}
         >
           <img
-            src={certificado.url}
+            src="/certificado-ies-upm.png"
             alt="Certificado oficial de formación en instalación de sistemas solares fotovoltaicos del Instituto de Energía Solar (IES-UPM)"
             loading="lazy"
             className="w-full rounded-xl border border-border shadow-sm"
