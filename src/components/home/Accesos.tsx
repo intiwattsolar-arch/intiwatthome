@@ -3,11 +3,17 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
 const accesos = [
-  { title: "Residencial", desc: "Soluciones energéticas para viviendas.", to: "/residencial" },
+  {
+    title: "Residencial",
+    desc: "Soluciones energéticas para viviendas.",
+    to: "https://home.intiwatt.com/",
+    external: true,
+  },
   {
     title: "Comercios e Industrias",
     desc: "Soluciones para empresas, comercios y operaciones industriales.",
-    to: "/comercios-e-industrias",
+    to: "https://industrial.intiwatt.com/",
+    external: true,
   },
   { title: "Nuestras obras", desc: "Proyectos y trabajos realizados por IntiWatt.", to: "/obras" },
   { title: "Calculadora básica", desc: "Una herramienta sencilla para obtener una primera orientación.", to: "/calculadora" },

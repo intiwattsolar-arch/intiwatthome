@@ -63,11 +63,17 @@ const Hero = () => (
         transition={{ delay: 0.8 }}
         className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-primary-foreground/75"
       >
-        {navLinks.map((l) => (
-          <Link key={l.to} to={l.to} className="hover:text-primary transition-colors">
-            {l.label}
-          </Link>
-        ))}
+        {navLinks.map((l) =>
+          l.external ? (
+            <a key={l.to} href={l.to} className="hover:text-primary transition-colors">
+              {l.label}
+            </a>
+          ) : (
+            <Link key={l.to} to={l.to} className="hover:text-primary transition-colors">
+              {l.label}
+            </Link>
+          )
+        )}
       </motion.div>
     </div>
   </section>
