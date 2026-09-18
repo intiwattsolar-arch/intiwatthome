@@ -49,12 +49,12 @@ const Hero = () => (
         >
           Es para mi casa
         </a>
-        <a
-          href="https://industrial.intiwatt.com/"
+        <Link
+          to="/comercios-e-industrias"
           className="bg-primary text-primary-foreground px-7 py-3.5 rounded-lg font-medium hover:opacity-90 transition-opacity text-center"
         >
           Es para mi negocio o fábrica
-        </a>
+        </Link>
       </motion.div>
 
       <motion.div

@@ -150,12 +150,12 @@ const ComerciosIndustrias = () => (
                 Para empresas que buscan reducir costos energéticos, mejorar la previsibilidad y optimizar una
                 instalación existente.
               </p>
-              <a
-                href="https://industrial.intiwatt.com/"
+              <Link
+                to="/contacto"
                 className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:opacity-90 transition-opacity"
               >
                 Es para mi negocio o fábrica
-              </a>
+              </Link>
             </motion.div>
 
             <motion.div {...fadeUp} transition={{ delay: 0.08 }} className="border-l-2 border-border pl-6">
