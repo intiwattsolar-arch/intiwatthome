@@ -12,8 +12,7 @@ const accesos = [
   {
     title: "Comercios e Industrias",
     desc: "Soluciones para empresas, comercios y operaciones industriales.",
-    to: "https://industrial.intiwatt.com/",
-    external: true,
+    to: "/comercios-e-industrias",
   },
   { title: "Nuestras obras", desc: "Proyectos y trabajos realizados por IntiWatt.", to: "/obras" },
   { title: "Calculadora básica", desc: "Una herramienta sencilla para obtener una primera orientación.", to: "/calculadora" },
