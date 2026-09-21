@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import certificado from "@/assets/certificado-ies-upm.png.asset.json";
-import heroImg from "@/assets/industrial/hero-industrial.jpg.asset.json";
-import obraIndustria from "@/assets/industrial/IMG-20231205-WA0007.jpg.asset.json";
-import obraPaneles from "@/assets/industrial/IMG-20231227-WA0000.jpg.asset.json";
-import obraEstructura from "@/assets/industrial/IMG-20231227-WA0002.jpg.asset.json";
+import certificado from "@/assets/certificado-ies-upm.png";
+import heroImg from "@/assets/industrial/hero-industrial.jpg";
+import obraIndustria from "@/assets/industrial/IMG-20231205-WA0007.jpg";
+import obraPaneles from "@/assets/industrial/IMG-20231227-WA0000.jpg";
+import obraEstructura from "@/assets/industrial/IMG-20231227-WA0002.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 16 },
@@ -93,9 +93,9 @@ const experiencia = [
 ];
 
 const proyectos = [
-  { img: obraPaneles.url, cat: "Industria", alt: "Campo de paneles fotovoltaicos sobre cubierta industrial" },
-  { img: obraEstructura.url, cat: "Comercial", alt: "Estructura de soporte con paneles fotovoltaicos en azotea" },
-  { img: obraIndustria.url, cat: "Proyectos especiales", alt: "Montaje de estructura fotovoltaica en altura" },
+  { img: obraPaneles, cat: "Industria", alt: "Campo de paneles fotovoltaicos sobre cubierta industrial" },
+  { img: obraEstructura, cat: "Comercial", alt: "Estructura de soporte con paneles fotovoltaicos en azotea" },
+  { img: obraIndustria, cat: "Proyectos especiales", alt: "Montaje de estructura fotovoltaica en altura" },
 ];
 
 const ComerciosIndustrias = () => (
@@ -105,7 +105,7 @@ const ComerciosIndustrias = () => (
       {/* HERO */}
       <section className="relative border-b border-border py-24 md:py-36 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroImg.url} alt="Instalación fotovoltaica sobre cubierta" className="w-full h-full object-cover" />
+          <img src={heroImg} alt="Instalación fotovoltaica sobre cubierta" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/65 to-foreground/25" />
         </div>
         <div className="container relative z-10 mx-auto px-4">
@@ -467,7 +467,7 @@ const ComerciosIndustrias = () => (
             </motion.div>
             <motion.div {...fadeUp} transition={{ delay: 0.1 }}>
               <img
-                src={certificado.url}
+                src={certificado}
                 alt="Certificado de formación especializada en sistemas solares fotovoltaicos del Instituto de Energía Solar (IES-UPM)"
                 loading="lazy"
                 className="w-full rounded-xl border border-border shadow-sm"
