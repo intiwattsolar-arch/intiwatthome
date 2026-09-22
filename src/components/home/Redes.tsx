@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import SocialLinks from "@/components/SocialLinks";
 
 const Redes = () => (
   <section className="py-16 md:py-20 bg-background">
@@ -13,24 +14,7 @@ const Redes = () => (
         <p className="text-muted-foreground mb-6">
           Seguimos nuestros proyectos, instalaciones y contenido técnico en redes.
         </p>
-        <div className="flex justify-center gap-6 text-sm">
-          <a
-            href="https://www.instagram.com/intiwatt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary font-medium hover:underline"
-          >
-            Instagram: @Intiwatt
-          </a>
-          <a
-            href="https://www.linkedin.com/company/intiwatt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary font-medium hover:underline"
-          >
-            LinkedIn: IntiWatt
-          </a>
-        </div>
+        <SocialLinks className="justify-center gap-6" iconClassName="w-6 h-6" />
       </motion.div>
     </div>
   </section>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo-intiwatt.png";
 import { navLinks } from "@/components/Navbar";
+import SocialLinks from "@/components/SocialLinks";
 
 const Footer = () => (
   <footer className="bg-secondary border-t border-border py-14">
@@ -23,11 +24,14 @@ const Footer = () => (
               {l.label}
             </Link>
           ))}
+          <Link to="/metodologia" className="block text-muted-foreground hover:text-primary transition-colors">
+            Nuestra metodología
+          </Link>
+          <Link to="/nosotros" className="block text-muted-foreground hover:text-primary transition-colors">
+            Nosotros
+          </Link>
           <Link to="/obras" className="block text-muted-foreground hover:text-primary transition-colors">
             Nuestras obras
-          </Link>
-          <Link to="/calculadora" className="block text-muted-foreground hover:text-primary transition-colors">
-            Calculadora básica
           </Link>
         </div>
 
@@ -45,25 +49,7 @@ const Footer = () => (
             </a>
           </p>
           <p className="text-muted-foreground">Córdoba y Santiago del Estero, Argentina</p>
-          <p className="text-muted-foreground">
-            <a
-              href="https://www.instagram.com/intiwatt"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              Instagram
-            </a>
-            {" · "}
-            <a
-              href="https://www.linkedin.com/company/intiwatt"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              LinkedIn
-            </a>
-          </p>
+          <SocialLinks className="pt-1" />
         </div>
       </div>
 
