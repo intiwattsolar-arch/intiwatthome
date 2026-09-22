@@ -23,7 +23,7 @@ const Navbar = () => {
           <span className="font-serif text-xl text-foreground">IntiWatt</span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-7">
+        <div className="hidden lg:flex items-center gap-4">
           {navLinks.map((l) =>
             l.external ? (
               <a
