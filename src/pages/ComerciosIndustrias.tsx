@@ -114,7 +114,7 @@ const ComerciosIndustrias = () => (
               Comercios e Industrias
             </p>
             <h1 className="text-4xl md:text-6xl font-serif text-primary-foreground leading-tight mb-6">
-              Energía diseñada para funcionar.
+              Energía diseñada para la eficiencia.
             </h1>
             <p className="text-primary-foreground/85 text-lg leading-relaxed max-w-2xl mb-6">
               Diseñamos soluciones de generación, almacenamiento y eficiencia energética a partir de cómo consume y cómo
