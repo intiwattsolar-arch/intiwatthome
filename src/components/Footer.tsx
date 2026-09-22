@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo-intiwatt.png";
 import { navLinks } from "@/components/Navbar";
+import SocialLinks from "@/components/SocialLinks";
 
 const Footer = () => (
   <footer className="bg-secondary border-t border-border py-14">
@@ -49,7 +50,6 @@ const Footer = () => (
           </p>
           <p className="text-muted-foreground">Córdoba y Santiago del Estero, Argentina</p>
           <SocialLinks className="pt-1" />
-        </div>
         </div>
       </div>
 
