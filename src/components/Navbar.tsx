@@ -6,8 +6,8 @@ import logo from "@/assets/logo-intiwatt.png";
 export const navLinks = [
   { label: "Residencial", to: "https://home.intiwatt.com/", external: true },
   { label: "Comercios e Industrias", to: "/comercios-e-industrias" },
-  { label: "Nuestra metodología", to: "/metodologia" },
-  { label: "Nosotros", to: "/nosotros" },
+  { label: "Energyear Argentina 2026", to: "/energyear-argentina-2026" },
+  { label: "Ecosistema IntiWatt", to: "/ecosistema" },
   { label: "Contacto", to: "/contacto" },
 ];
 

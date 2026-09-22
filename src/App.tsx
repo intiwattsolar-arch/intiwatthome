@@ -10,6 +10,7 @@ import Metodologia from "./pages/Metodologia";
 import Obras from "./pages/Obras";
 import Calculadora from "./pages/Calculadora";
 import Nosotros from "./pages/Nosotros";
+import Ecosistema from "./pages/Ecosistema";
 import Contacto from "./pages/Contacto";
 import Energyear2026 from "./pages/Energyear2026";
 import NotFound from "./pages/NotFound";
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/obras" element={<Obras />} />
           <Route path="/calculadora" element={<Calculadora />} />
           <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/ecosistema" element={<Ecosistema />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/energyear-argentina-2026" element={<Energyear2026 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
